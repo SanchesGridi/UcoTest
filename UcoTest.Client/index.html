@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>form proj</title>
+</head>
+<body>
+    <div id="app">
+        <h3>What you need to do?</h3>
+        <ul>
+          <li>Create login form using any js framework you like with 2 fields: user name and password.</li>
+          <li>If user will enter username = "test@test.com" and password = "test" show success message</li>
+          <li>In other cases show error message</li>
+          <li>No server side validation required.</li>
+          <li>No design of any kind required.</li>
+        </ul>
+        <form>
+          <input id="user_name" type="text" name="user"/> <br/>
+          <input id="password" type="text" name="user"/> <br/>
+          <input id="send" type="submit" value="send"/> <br/>
+        </form>
+        <div id="message"></div>
+      </div>
+      <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+      <script>
+        $(() => {
+            $("#send").on("click", e => {
+                try {
+                    e.preventDefault();
+                    var userName = $("#user_name").val();
+                    var password = $("#password").val();
+                    if (userName === "test@test.com" && password === "test") {
+                        $("#message").append(`<p>success</p>`);
+                    } else {
+                        $("#message").append(`<p>fail</p>`);
+                    }
+                } catch (error) {
+                    console.log(error.message)
+                }
+            })
+        })
+      </script>
+</body>
+</html>
