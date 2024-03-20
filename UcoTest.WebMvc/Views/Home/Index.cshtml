@@ -1,0 +1,30 @@
+﻿@model List<SomeTestClass>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>What you need to do?</h3>
+            <ul>
+                <li>Show Table of items with id 2 and 3.</li>
+            </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.ID</td>
+                            <td>@item.Title</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+    </div>
+</div>
